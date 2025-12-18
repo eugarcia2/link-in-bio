@@ -4,9 +4,21 @@
   box-sizing: border-box;
 }
 
+/* Carrega a fonte Surgena (arquivo adicionado: assets/surgenapersonaluseonlysembd-q2qwd.ttf)
+   Atenção: verifique a licença do arquivo — o nome indica uso pessoal.
+*/
+@font-face {
+  font-family: "Surgena";
+  src: local("Surgena"), local("Surgena Regular"),
+    url("./assets/surgenapersonaluseonlysembd-q2qwd.ttf") format("truetype");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --text-color: white;
-  --bg-url: url(./assets/bg-mobile.jpg);
+  --bg-color: #131f22;
   --stroke-color: rgba(255, 255, 255, 0.5);
   --surface-color: rgba(255, 255, 255, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
@@ -15,22 +27,22 @@
 }
 
 .light {
-  --text-color: black;
-  --bg-url: url(./assets/bg-mobile-light.jpg);
-  --stroke-color: rgba(0, 0, 0, 0.5);
-  --surface-color: rgba(0, 0, 0, 0.05);
-  --surface-color-hover: rgba(0, 0, 0, 0.02);
-  --highlight-color: rgba(0, 0, 0, 0.1);
+  --text-color: #131f22;
+  --bg-color: #ffffff;
+  --stroke-color: #131f22;
+  --surface-color: rgba(19, 31, 34, 0.05);
+  --surface-color-hover: rgba(19, 31, 34, 0.02);
+  --highlight-color: rgba(19, 31, 34, 0.08);
   --switch-bg-url: url(./assets/sun.svg);
 }
 
 body {
-  background: var(--bg-url) no-repeat top center/cover;
-  height: 100vh;
+  background-color: var(--bg-color);
+  min-height: 100vh;
 }
 
 body * {
-  font-family: "Inter", sans-serif;
+  font-family: "Surgena", "Inter", sans-serif;
   color: var(--text-color);
 }
 
@@ -169,13 +181,7 @@ footer {
 
 /* media queries */
 @media (min-width: 700px) {
-  :root {
-    --bg-url: url(./assets/bg-desktop.jpg);
-  }
-
-  .light {
-    --bg-url: url(./assets/bg-desktop-light.jpg);
-  }
+  /* No background images for desktop: background color handled with --bg-color */
 }
 
 /* animation */
